@@ -75,7 +75,7 @@ def show(Data):
     for x, y in Data:
         plt.scatter(x, y, c='b')
 
-    plt.pause(1)
+    # plt.pause(1)
     plt.show()
 
 def plotClusters(colors, cluster, center):
@@ -91,7 +91,7 @@ def plotClusters(colors, cluster, center):
         x_aix = list(map(lambda pos:pos[0], value))
         y_aix = list(map(lambda pos:pos[1], value))
         plt.scatter(x_aix, y_aix, c=key)
-    plt.pause(1)
+    # plt.pause(1)
     plt.show()
 
 
@@ -101,7 +101,10 @@ if __name__ == '__main__':
     classes = ['g', 'b', 'r']
     data, centers = createData(len(classes), 100)
     # print(centers)
+    # with open('data.txt', 'w') as f:
+    #     for d in data:
+    #         f.write(str(d)+'\n')
     plt.ion()
-    fig = plt.figure(1)
+    fig = plt.figure()
     center, cluster = KCenters(classes, data, centers)
     plt.show()

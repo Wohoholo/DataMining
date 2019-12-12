@@ -62,13 +62,13 @@ def createData(k, num_data, dimension=2):
 
 def show(data, center):
     plt.scatter([x[0] for x in data], [y[1] for y in data])
-    plt.pause(0.2)
+    # plt.pause(0.2)
     colors = ['r', 'g', 'y']
     for i in range(len(center)):
         x, y = center[i][0], center[i][1]
         color = colors[i]
-        plt.scatter(x, y, c=color, marker='x')
-        plt.pause(0.2)
+        plt.scatter(x, y, c=color)
+        # plt.pause(0.2)
     plt.show()
 
 def plotClusters(cluster, center):
@@ -76,12 +76,12 @@ def plotClusters(cluster, center):
     for key, value in cluster.items():
         for x, y in value:
             plt.scatter(x, y, c=key)
-            plt.pause(0.2)
+            # plt.pause(0.2)
     for i in range(len(center)):
         x, y = center[i][0], center[i][1]
         color = colors[i]
-        plt.scatter(x, y, c=color, marker='x')
-        plt.pause(0.2)
+        plt.scatter(x, y, c=color)
+        # plt.pause(0.2)
     plt.show()
 
 if __name__ == '__main__':
@@ -89,6 +89,8 @@ if __name__ == '__main__':
     plt.ion()
 
     data, centers = createData(3, 100)
-
+    # with open('data.txt', 'w') as f:
+    #     for d in data:
+    #         f.write(str(d)+'\n')
     KMeans(['r', 'g', 'y'], data, centers)
     plt.show()
