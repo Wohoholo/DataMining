@@ -1,4 +1,4 @@
-# **MyDM**
+# **DataMining**
 ## _some code about my data mining course_
 ### [**Apriori**](./Apriori/)
 ### [**ID3、C4.5**](./ID3/)
